@@ -1,0 +1,40 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  /* border: 2px dashed cyan; */
+}
+
+main .OLD,
+main .NEW {
+  padding: 20px;
+}
+
+main .OLD {
+  background-color: #ffebe9;
+}
+
+main .NEW {
+  background-color: #e6ffec;
+}
+
+table {
+  margin: 20px;
+}
+
+table tr th {
+  text-align: left;
+}
+
+table tr td {
+  min-width: 30px;
+  padding: 5px;
+  border: 1px solid black;
+}
