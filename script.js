@@ -81,7 +81,7 @@ const showDiff = (diffStr) => {
       return console.error("cell not found");
     }
 
-    cell.innerHTML = form;
+    cell.innerHTML += ` ${form}`;
   });
 
   diffsCountEle.innerHTML = diffs.size;
