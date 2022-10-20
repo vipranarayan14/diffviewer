@@ -6,6 +6,10 @@ header {
   text-align: center;
 }
 
+h1 span {
+  display: inline-block;
+}
+
 main {
   display: flex;
   justify-content: center;

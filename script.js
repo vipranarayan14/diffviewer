@@ -1,4 +1,5 @@
 const dhatuIdEle = document.querySelector(".dhatuId");
+const ganaEle = document.querySelector(".gana");
 const skippedLinesEle = document.querySelector(".skipped-lines");
 const diffsCountEle = document.querySelector(".diffs-count");
 const dropArea = document.querySelector("body");
@@ -47,7 +48,7 @@ const showDiff = (diffStr) => {
 
   const skippedLines = [];
   const diffs = new Set();
-  let title;
+  let isTitleSet = false;
 
   const lines = diffStr.split("\n");
 
@@ -60,8 +61,9 @@ const showDiff = (diffStr) => {
 
     const [, version, form, dhatuId, lakara, pv, padi, gana] = results;
 
-    if (!title) {
-      title = `${dhatuId} - ${gana}`;
+    if (!isTitleSet) {
+      dhatuIdEle.innerHTML = dhatuId;
+      ganaEle.innerHTML = gana;
     }
 
     diffs.add(`${lakara}_${pv}`);
@@ -76,8 +78,6 @@ const showDiff = (diffStr) => {
 
     cell.innerHTML += ` ${form}`;
   });
-
-  dhatuIdEle.innerHTML = title;
 
   diffsCountEle.innerHTML = diffs.size;
 
